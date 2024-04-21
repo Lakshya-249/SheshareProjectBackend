@@ -1,4 +1,5 @@
 const User = require("./Database");
+const cloudinary = require("./utils/cloudinary");
 
 async function createUserMiddleware(req, res) {
   try {
