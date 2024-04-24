@@ -6,7 +6,7 @@ async function updateUserMiddleware(req, res, next) {
     const { userid, interests } = req.body;
     console.log(interests);
 
-    const user = await User.findOne({ userid });
+    const user = await User.findById(userid);
 
     if (!user) {
       return res.status(404).json({ error: "User not found" });

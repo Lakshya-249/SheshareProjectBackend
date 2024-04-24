@@ -9,7 +9,7 @@ async function getUserByIdMiddleware(req, res, next) {
       return res.status(400).json({ error: "userid is required" });
     }
 
-    const user = await User.findOne({ userid });
+    const user = await User.findById(userid);
 
     if (!user) {
       return res.status(404).json({ error: "User not found" });
