@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
   rentFrom: { type: Date, default: Date.now },
   rentTo: Date,
   week: Number,
+  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "User", default: [] }],
 });
 
 // Define the model
