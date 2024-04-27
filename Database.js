@@ -26,6 +26,8 @@ const userSchema = new mongoose.Schema({
   rentTo: Date,
   week: Number,
   reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "User", default: [] }],
+  available: { type: Boolean, default: true },
+  rentedOn: Date,
 });
 
 // Define the model

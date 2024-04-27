@@ -7,6 +7,7 @@ const getUsersMiddleware = require("./selectuserfilter");
 const addReviewMiddleware = require("./addtocart");
 const getCartUserMiddleware = require("./getcart");
 const removeReviewMiddleware = require("./deletecart");
+const setUserAvailableFalse = require("./setavailable");
 
 // Middleware to parse JSON body
 router.use(express.json());
@@ -18,6 +19,8 @@ router.post("/createUser", createUserMiddleware);
 router.put("/updateUser", updateUserMiddleware);
 
 router.put("/addcart", addReviewMiddleware);
+
+router.put("/rent", setUserAvailableFalse);
 
 router.get("/getuser", getUserByIdMiddleware);
 

@@ -15,6 +15,8 @@ async function getUsersMiddleware(req, res, next) {
       query.rent = { $lte: parseInt(cost) };
     }
 
+    query.available = true;
+
     const users = await User.find(query);
     console.log("Users found:", users);
     res.status(200).json(users); // Respond with the found users
