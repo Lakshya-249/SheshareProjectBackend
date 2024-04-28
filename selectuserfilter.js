@@ -19,7 +19,7 @@ async function getUsersMiddleware(req, res, next) {
     console.log("Users found:", users);
     res.status(200).json(users); // Respond with the found users
   } catch (error) {
-    console.error("Error getting users:", error);
+    console.log("Error getting users:", error);
     res.status(500).json({ error: "Error getting users" }); // Handle error
   }
 }
