@@ -1,4 +1,4 @@
-const User = require("./Database");
+const { User } = require("./Database");
 
 // Middleware function to get users based on filters
 async function getUsersMiddleware(req, res, next) {
@@ -14,8 +14,6 @@ async function getUsersMiddleware(req, res, next) {
     if (cost) {
       query.rent = { $lte: parseInt(cost) };
     }
-
-    query.available = true;
 
     const users = await User.find(query);
     console.log("Users found:", users);

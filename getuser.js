@@ -1,4 +1,4 @@
-const User = require("./Database");
+const { User } = require("./Database");
 
 // Middleware function to get a user by userid
 async function getUserByIdMiddleware(req, res, next) {

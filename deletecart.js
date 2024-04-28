@@ -1,4 +1,4 @@
-const User = require("./Database");
+const { User } = require("./Database");
 
 const removeReviewMiddleware = async (req, res, next) => {
   try {

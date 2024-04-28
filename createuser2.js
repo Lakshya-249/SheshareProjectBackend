@@ -1,4 +1,4 @@
-const User = require("./Database");
+const { User } = require("./Database");
 
 // Middleware function to add more details to an existing user
 async function updateUserMiddleware(req, res, next) {
@@ -6,7 +6,9 @@ async function updateUserMiddleware(req, res, next) {
     const { userid, interests } = req.body;
     console.log(interests);
 
-    const user = await User.findById(userid);
+    const user =
+      (await User.findOne({ userid })) || (await User.findById(userid));
+    console.log(user);
 
     if (!user) {
       return res.status(404).json({ error: "User not found" });

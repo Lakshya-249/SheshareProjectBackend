@@ -1,4 +1,4 @@
-const User = require("./Database");
+const { User } = require("./Database");
 
 const getCartUserMiddleware = async (req, res) => {
   try {

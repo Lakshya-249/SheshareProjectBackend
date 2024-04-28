@@ -30,7 +30,16 @@ const userSchema = new mongoose.Schema({
   rentedOn: Date,
 });
 
+const reviewschema = new mongoose.Schema({
+  name: String,
+  userid: String,
+  review: { type: String, required: true },
+  rating: { type: Number, required: true },
+});
+
 // Define the model
 const User = mongoose.model("User", userSchema);
 
-module.exports = User;
+const Review = mongoose.model("Review", reviewschema);
+
+module.exports = { User, Review };

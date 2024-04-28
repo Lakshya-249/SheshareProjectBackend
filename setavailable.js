@@ -1,4 +1,4 @@
-const User = require("./Database");
+const { User } = require("./Database");
 
 const setUserAvailableFalse = async (req, res, next) => {
   const userId = req.query.userId; // Assuming the _id is passed as a parameter in the URL
